@@ -28,7 +28,7 @@
 <?php
 // Database connection details
 $host = 'localhost';
-$dbname = 'beau';
+$dbname = 'shoelab';
 $username = 'root';
 $password = '';
 
