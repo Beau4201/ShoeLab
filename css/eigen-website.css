@@ -1,0 +1,99 @@
+#header {
+    font-size: 40px;
+    background-color: #F2F3F4;
+    font-family: 'Arial';
+    padding: 30px;
+    color: black;
+    width: 96%;
+    display: flex;
+    justify-content: center;
+}
+
+#login{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2F3F4;
+    
+}
+
+
+
+nav {
+    display: flex;
+    width: 96%;
+    background-color: #F7F7F7;
+    padding: 30px;
+    gap: 50px;
+    float: middle;
+    justify-content: center;
+    border: black;
+
+
+}
+
+body {
+    background-color: #F5F5F5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #F5FFFA;
+}
+
+#coffeeshop {
+    width: 80%;
+    height: 350px;
+    border-radius: 7px;
+    position: absolute;
+    opacity: 0.8;
+    margin-left: 10%;
+}
+
+#tabel {
+    border-collapse: collapse;
+    border: none;
+    float: right;
+    margin-right: 9%;
+}
+
+#over {
+    margin-left: 10% ;
+}
+
+#para {
+    float: left;
+    margin-left: 10%;
+    max-width: 600px;
+
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+    background-color: #F7F7F7;
+    padding: 5%;
+}
+
+#nav{
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#nav:hover{
+    background-color: #E5E4E2;
+}
+
+#kleur{
+    background-color: #E5E4E2;
+}
