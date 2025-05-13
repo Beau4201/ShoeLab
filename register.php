@@ -19,6 +19,15 @@
         
         <label for="confirm_password"></label><br>
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+
+        <label for="phone"></label><br>
+        <input type="password" id="phone" name="phone" placeholder="Phone number" required>
+
+        <label for="adress"></label><br>
+        <input type="text" id="adress" name="adress" placeholder="Adress" required>
+
+        <label for="postal"></label><br>
+        <input type="text" id="postal" name="postal" placeholder="Postal code" required>
         
         
         <button type="submit">Register</button>
@@ -59,13 +68,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("INSERT INTO login (username, email, password) VALUES (:username, :email, :password)");
     $stmt->bindParam(':username', $user);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $hashed_password);
+    $stmt->bindParam(':password');
 
     if ($stmt->execute()) {
         echo "Registration successful!";
     } else {
         echo "Error: Could not complete registration.";
     }
+
+    function postcodecheck($postcode) {
+    return preg_match('/^[1-9][0-9]{3}\s?[A-Z]{2}$/', strtoupper($postcode));
+}
+
+// Voorbeeld
+if (("1234 AB")) {
+    echo "Geldige postcode";
+} else {
+    echo "Ongeldig formaat";
+}
+
+function normalizePostcode($postcode) {
+    // Maak alles hoofdletters en verwijder spaties
+    $postcode = strtoupper(str_replace(' ', '', $postcode));
+    
+    // Voeg spatie toe tussen cijfers en letters
+    $postcode = substr($postcode, 0, 4) . ' ' . substr($postcode, 4, 2);
+    
+    return $postcode;
+}
+
+function isValidDutchPostcode($postcode) {
+    // Normaliseer eerst
+    $postcode = normalizePostcode($postcode);
+    
+    // Regex check
+    return preg_match('/^[1-9][0-9]{3}\s?[A-Z]{2}$/', $postcode);
+}
+
+// Voorbeeld
+$input = "1234ab";
+if (isValidDutchPostcode($input)) {
+    echo normalizePostcode($input); // Output: 1234 AB
+} else {
+    echo "Ongeldige postcode";
+}
+
 }
 ?>
 </body>

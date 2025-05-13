@@ -11,7 +11,7 @@
 body { background: #F5F5F5; }
 form { max-width:420px; margin:50px auto; }
 
-#username , #email , #password , #confirm_password {
+#username , #email , #password , #confirm_password , #adress , #postal , #phone {
   color: black;
   font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
