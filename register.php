@@ -19,7 +19,7 @@
         <button type="submit">Register</button>
     </form>
 
-    <p id="terug">Heb je al een account? Ga terug naar <a href="test.php">login</a></p>
+    <p id="terug">Heb je al een account? Ga terug naar <a href="login.php">login</a></p>
 
 <?php
 // ---- DATABASE CONFIG ----
