@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
       </form>
 
       <p class="reg"> nog geen account, <a href="register.php">registreer hier</a></p> 
-      <p class="home"> terug naar home <a href="index.html"></a></p>
+      <p class="home"> terug naar home <a href="index.html">home</a></p>
 
 </body>
 </html>
