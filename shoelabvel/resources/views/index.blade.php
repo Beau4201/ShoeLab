@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +27,13 @@
     
 
     </div>
-      <a id="login" href="login.php">Log in </a>
+      <a id="login" href="login">Log in </a>
       
 
     <section>
         <nav>
-            <li> <a id="Contact" href="contact2.html">Contact</a></li>
-            <li> <a id="Over" href="soortenschoenen.html">Soorten schoenen</a></li>
+            <li> <a id="Contact" href="contact">Contact</a></li>
+            <li> <a id="Over" href="soortenschoenen">Soorten schoenen</a></li>
             <li> <a id="Over" href="#">...</a></li>
             <li> <a id="Over" href="#">...</a></li>
             <li> <a id="Over" href="#">...</a></li>

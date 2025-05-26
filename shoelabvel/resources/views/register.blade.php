@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-    <form method="post">
+
+
+    <form method="POST" action="{{route('register')}}" id="register-form">
+        @csrf   
         <input type="text" id="username" name="username" placeholder="Username" required><br>
         <input type="email" id="email" name="email" placeholder="Email" required><br>
         <input type="password" id="password" name="password" placeholder="Password" required><br>
@@ -19,7 +22,7 @@
         <button type="submit">Register</button>
     </form>
 
-    <p id="terug">Heb je al een account? Ga terug naar <a href="login.php">login</a></p>
+    <p id="terug">Heb je al een account? Ga terug naar <a href="login">login</a></p>
 
 <?php
 // ---- DATABASE CONFIG ----
