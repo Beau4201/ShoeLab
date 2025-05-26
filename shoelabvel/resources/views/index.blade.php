@@ -13,10 +13,13 @@
 </head>
 
 <body>
-  <div class="logo-container" style="background-color: black; height:70px;">
-        <img src="img/IMG-20250509-WA0000.jpg" style= "height:70px; width:70px;"alt="ShoeLab logo" class="logo-circle">
 
-        
+
+
+
+
+  <div class="logo-container" style="background-color: black; height:70px;">
+        <img src="img/IMG-20250509-WA0000.jpg" style= "height:70px; width:80px; background-color: black;"alt="ShoeLab logo" class="logo-circle">
             <h1 id="h1">
             Shop NU! 50 procent korting op je eerste paar schoenen!
         </h1>
@@ -26,6 +29,27 @@
   <input type="text" id="searchInput" placeholder="Zoek een product" onkeyup="liveFilter()">
   <button onclick="searchFunction()">🔍</button>
 </div>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
 
     
@@ -204,9 +228,6 @@ Bestel vandaag nog en ervaar hoe makkelijk stijlvol shoppen kan zijn.</p>
     });
   }
 </script>
-
-
-
 
 
 
