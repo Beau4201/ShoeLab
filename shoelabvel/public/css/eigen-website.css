@@ -157,3 +157,16 @@ nav a:hover {
 .search-container button:hover {
   background-color: #555;
 }
+
+#h1{
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width:600px;
+     position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 100%;
+}

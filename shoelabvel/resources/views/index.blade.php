@@ -13,6 +13,15 @@
 </head>
 
 <body>
+  <div class="logo-container" style="background-color: black; height:70px;">
+        <img src="img/IMG-20250509-WA0000.jpg" style= "height:70px; width:70px;"alt="ShoeLab logo" class="logo-circle">
+
+        
+            <h1 id="h1">
+            Shop NU! 50 procent korting op je eerste paar schoenen!
+        </h1>
+    </div>
+
     <div class="search-container">
   <input type="text" id="searchInput" placeholder="Zoek een product" onkeyup="liveFilter()">
   <button onclick="searchFunction()">🔍</button>
