@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('index');
@@ -66,5 +67,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
-
+Route::get('/', [ProductController::class, 'index'])->name('home');
+Route::get('/search', [ProductController::class, 'search'])->name('search');

@@ -52,12 +52,14 @@ nav a:hover {
 }
 
 #coffeeshop {
+    display: block;
+    margin: 40px auto 40px auto; /* centers horizontally and adds vertical space */
     width: 80%;
+    max-width: 700px; /* optional: limits image size on large screens */
     height: 350px;
     border-radius: 7px;
-    position: absolute;
     opacity: 0.8;
-    margin-left: 10%;
+    position: static; /* remove absolute positioning */
 }
 
 #tabel {
@@ -128,11 +130,14 @@ nav a:hover {
 
 .search-container {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 70px;
+  right: 10px;
   display: flex;
   align-items: center;
   z-index: 1000; /* zodat het boven andere dingen ligt */
+  border-radius: 20;
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
 
 
@@ -208,4 +213,40 @@ nav a:hover {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+/* Make body take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let main content grow to fill space */
+main {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  background-color: #000;
+  color: #000;
+  text-align: center;
+  padding: 20px;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+#hp{
+    display: flex;
+    justify-content: center;
+    height: 1vh;
+    background-color: #F5F5F5;
 }
