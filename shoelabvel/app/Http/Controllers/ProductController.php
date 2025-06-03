@@ -7,26 +7,51 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    // Haal alle producten op en stuur ze naar de hoofdpagina
+    // Show all products
+    public function showProducts()
+{
+    $products = Product::all(); // get all products from DB 
+    // dd($products);
+    return view('products', compact('products'));  // send products to view
+}
+
+    // Show form to create a product
+    public function create()
+    {
+        // return view('create');
+        $products = Product::all(); // get all products from DB 
+        // dd($products);
+        return view('create', compact('products'));  // send products to view
+    }
+
+    // Store new product in DB
+    public function store(Request $request)
+    {
+        // Validate input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|gt:0',
+            'description' => 'nullable|string',
+        ]);
+
+        // Create product
+        Product::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+        ]);
+
+        // Redirect back to products list with success message
+        return redirect()->route('products')->with('success', 'Product toegevoegd!');
+    }
+
     public function index()
     {
         $products = Product::all();
-        return view('index', compact('products'));
+        // var_dump($products); // Debugging line to check products
+        return view('products' , compact('products'));  // If your blade file is index.blade.php
     }
 
-    // Zoekfunctie voor producten
-    public function search(Request $request)
-    {
-        $query = $request->input('q');
 
-        if (!$query) {
-            return redirect()->route('home');
-        }
-
-        $products = Product::where('name', 'like', '%' . $query . '%')
-            ->orWhere('description', 'like', '%' . $query . '%')
-            ->get();
-
-        return view('index', compact('products'));
-    }
+    
 }

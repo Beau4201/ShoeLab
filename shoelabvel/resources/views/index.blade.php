@@ -10,9 +10,11 @@
 </head>
 
 <body>
+    <a id="login" href="{{ route('login') }}">Log in</a>
     <div class="logo-container" style="background-color: black; height:70px;">
         <img src="{{ asset('img/IMG-20250509-WA0000.jpg') }}" style="height:70px; width:80px;" alt="ShoeLab logo" class="logo-circle">
         <h1 id="h1">Shop NU! 50 procent korting op je eerste paar schoenen!</h1>
+        
     </div>
 
    
@@ -25,13 +27,16 @@
             <input type="text" name="q" id="searchInput" placeholder="Zoek een product" onkeyup="liveFilter()">
             <button type="submit">🔍</button>
         </form>
+        <br> <br>
+      
     </div>
+      
     </div>
 
     
     </div>
 
-    <a id="login" href="{{ route('login') }}">Log in</a>
+    
 
     
 
@@ -50,6 +55,9 @@
         <p id="para">Welkom bij ShoeLab, jouw online bestemming voor stijlvolle schoenen. Wij bieden een brede selectie schoenen met dropshipping gemak!</p>
 
         <h2 id="hp">Onze producten</h2>
+        <a href="{{ route('products.index') }}">Our Products ({{ \App\Models\Product::count() }})</a>
+
+
         <div id="products">
             @forelse ($products as $product)
                 <div class="product searchable">

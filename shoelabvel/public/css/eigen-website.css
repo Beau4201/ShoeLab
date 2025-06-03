@@ -10,12 +10,17 @@
 }
 
 #login{
+    position: absolute;
     text-decoration: none;
-    color: black;
+    color: white;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
-    background-color: #F2F3F4;
+    background-color: #000;
+    padding: 10px 20px;
+    font-size: 13px;
+    right: 5px;
+    
     
 }
 
