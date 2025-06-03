@@ -180,7 +180,9 @@ nav a:hover {
     left: 0;
     width: 100%;
 }
-   
+
+
+   /* SIDE MENU START */
 .sidenav {
   height: 100%;
   width: 0;
@@ -219,6 +221,13 @@ nav a:hover {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+/* ----------------------------------------- */
+
+
+
+
+
 
 /* Make body take full height */
 html, body {

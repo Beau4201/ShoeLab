@@ -10,19 +10,38 @@
 </head>
 
 <body>
-    <a id="login" href="{{ route('login') }}">Log in</a>
     <div class="logo-container" style="background-color: black; height:70px;">
         <img src="{{ asset('img/IMG-20250509-WA0000.jpg') }}" style="height:70px; width:80px;" alt="ShoeLab logo" class="logo-circle">
         <h1 id="h1">Shop NU! 50 procent korting op je eerste paar schoenen!</h1>
         
     </div>
 
-   
+   <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
     <div id="header">
         <header>ShoeLab</header>
+        <div class="search-container" style="30px;">
+            <a id="login" href="{{ route('login') }}">Log in</a>
 
-        <div class="search-container">
         <form action="{{ route('search') }}" method="GET">
             <input type="text" name="q" id="searchInput" placeholder="Zoek een product" onkeyup="liveFilter()">
             <button type="submit">🔍</button>
@@ -32,8 +51,6 @@
     </div>
       
     </div>
-
-    
     </div>
 
     
