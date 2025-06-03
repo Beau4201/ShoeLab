@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Login; // jouw model
+use App\Models\Login;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -11,26 +11,23 @@ class RegisterController extends Controller
     // Toon registratieformulier
     public function showForm()
     {
-        return view('register'); // zorg dat je resources/views/register.blade.php hebt
+        return view('register');
     }
 
     // Verwerk registratie
     public function register(Request $request)
     {
-        
-       // dd("Hallo1");
-    
-        // Valideer input
-     /*     $request->validate([
+        // Validatie (optioneel, maar aanbevolen)
+        $request->validate([
             'username' => 'required|string|max:255|unique:login,username',
             'email' => 'required|email|max:255|unique:login,email',
-            'password' => 'required|string|confirmed|min:8',
+            'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|string|max:20',
             'adress' => 'required|string|max:255',
             'postal' => ['required', 'regex:/^[1-9][0-9]{3}\s?[A-Z]{2}$/i'],
-        ]);*/
-     //   dd($request->all());
-        // Maak nieuwe gebruiker aan
+        ]);
+
+        // Nieuwe gebruiker aanmaken
         Login::create([
             'username' => $request->username,
             'email' => $request->email,
@@ -40,7 +37,6 @@ class RegisterController extends Controller
             'postal' => strtoupper(str_replace(' ', '', $request->postal)),
         ]);
 
-        // Redirect naar login met succesmelding
         return redirect()->route('login')->with('success', 'Registratie gelukt! Je kunt nu inloggen.');
     }
 }

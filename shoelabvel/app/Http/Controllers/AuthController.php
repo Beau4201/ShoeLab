@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -25,8 +26,8 @@ class AuthController extends Controller
         $user = DB::table('login')->where('email', $request->email)->first();
 
         if ($user) {
-            // Check wachtwoord (hier plain text, beter is hash check)
-            if ($request->password === $user->password) {
+            // ✅ Gebruik Hash::check om gehashte wachtwoorden te vergelijken
+            if (Hash::check($request->password, $user->password)) {
                 Session::put('user_id', $user->id);
                 Session::put('user_email', $user->email);
 
@@ -50,13 +51,15 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => 'required|email|unique:login,email',
-            'password' => 'required|min:6|confirmed', // Bevat ook wachtwoord bevestiging
+            'password' => 'required|min:6|confirmed',
         ]);
 
-        // Maak nieuwe gebruiker aan met gehashte password
+        // ✅ Sla wachtwoord veilig op met Hash::make
         DB::table('login')->insert([
             'email' => $request->email,
-            'password' => $request->password, // hier liever: Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         return redirect('/login')->with('success', 'Account aangemaakt, log in!');
