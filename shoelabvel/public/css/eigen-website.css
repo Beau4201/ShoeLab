@@ -16,6 +16,9 @@
     align-items: center;
     justify-content: center;
     background-color: #F2F3F4;
+    font-size: 20px;
+    height: 20px;
+
     
 }
 
@@ -175,7 +178,9 @@ nav a:hover {
     left: 0;
     width: 100%;
 }
-   
+
+
+   /* SIDE MENU START */
 .sidenav {
   height: 100%;
   width: 0;
@@ -214,6 +219,13 @@ nav a:hover {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+/* ----------------------------------------- */
+
+
+
+
+
 
 /* Make body take full height */
 html, body {
