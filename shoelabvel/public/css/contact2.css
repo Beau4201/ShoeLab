@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
   padding: 40px 0;
   font: 300 60px 'Oswald', sans-serif;
-  color: #fff;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 6px;
 }
@@ -43,7 +43,7 @@ body {
 textarea {
   max-width: 400px;
   background-color: #000;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: 1px;
 }
 
@@ -77,16 +77,11 @@ textarea {
   max-width: 400px;
 }
 
-/* Location, Phone, Email Section */
-.contact-list {
-  list-style-type: none;
-  margin-left: -30px;
-  padding-right: 20px;
-}
+
 
 .list-item {
   line-height: 4;
-  color: #aaa;
+  color: #000000;
 }
 
 .contact-text {
@@ -108,57 +103,14 @@ textarea {
 }
 
 .contact-text a {
-  color: #bbb;
+  color: #000000;
   text-decoration: none;
   transition-duration: 0.2s;
 }
 
 .contact-text a:hover {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
-}
-
-
-/* Social Media Icons */
-.social-media-list {
-  position: relative;
-  font-size: 22px;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.social-media-list li a {
-  color: #fff;
-}
-
-.social-media-list li {
-  position: relative; 
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  margin: 10px 3px;
-  line-height: 60px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: rgb(27,27,27);
-  cursor: pointer; 
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 0 0 0 1px #fff;
-  transition: all .2s ease-in-out;
 }
 
 .social-media-list li:hover {
@@ -183,7 +135,7 @@ textarea {
 }
 
 hr {
-  border-color: rgba(255,255,255,.6);
+  border-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Begin Media Queries*/
