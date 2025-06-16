@@ -256,6 +256,10 @@
 </head>
 
 <body>
+    <div class="winkelmandje">
+  <img src="{{ asset('img/winkelmandje.png') }}" alt="Winkelmand" style="width: 50px; height: 50px; cursor: pointer;" />
+</div>
+
     <header class="top-header" role="banner">
         <div class="logo-container">
             <img src="{{ asset('img/IMG-20250509-WA0000.jpg') }}" alt="ShoeLab logo" class="logo-circle" action="index.blade.php"/>
@@ -346,6 +350,10 @@
             }
         });
     </script>
+
+
+
+
 </body>
 
 </html>

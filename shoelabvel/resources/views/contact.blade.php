@@ -50,7 +50,7 @@
           
           <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">+31 6 09328754</a></span></i></li>
           
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">Shoelab@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">Shoelab62@gmail.com</a></span></i></li>
           
         </ul>
 

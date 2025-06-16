@@ -269,3 +269,10 @@ footer, #footer {
     white-space: normal;
   }
 }
+
+#winkelmandje {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
