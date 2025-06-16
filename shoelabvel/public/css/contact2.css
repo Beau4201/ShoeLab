@@ -256,8 +256,9 @@ hr {
 }
 
 body {
-  background-image: url('SNEAKER_GUIDE_OPENER.webp');
+  background-image: url('img/SNEAKER_GUIDE_OPENER.webp');
   background-repeat: no-repeat;
   background-attachment: fixed; 
-  background-size: 100% 100%;
+  background-size: 100%;
+  
 }

@@ -288,16 +288,27 @@
             <a href="{{ route('products.index') }}" class="view-all-products">Bekijk alle producten ({{ \App\Models\Product::count() }})</a>
 
             <div id="products">
-                @forelse ($products as $product)
-                    <div class="product searchable" tabindex="0">
-                        <h3>{{ $product->name }}</h3>
-                        <p>{{ $product->description }}</p>
-                        <p class="price">€{{ number_format($product->price, 2) }}</p>
-                    </div>
-                @empty
-                    <p>Geen producten beschikbaar.</p>
-                @endforelse
-            </div>
+    @forelse ($products as $product)
+        <div class="product searchable" tabindex="0">
+            <h3>{{ $product->name }}</h3>
+
+            {{-- SHOW DESCRIPTION --}}
+            <p>{{ $product->description }}</p>
+
+            {{-- SHOW PRICE --}}
+            <p class="price">€{{ number_format($product->price, 2) }}</p>
+
+            {{-- SHOW IMAGE --}}
+            @if ($product->image)
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="200">
+            @else
+                <p>Geen afbeelding</p>
+            @endif
+        </div>
+    @empty
+        <p>Geen producten beschikbaar.</p>
+    @endforelse
+</div>
         </section>
     </main>
 
