@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
   padding: 40px 0;
   font: 300 60px 'Oswald', sans-serif;
-  color: #000000;
+  color: #c7eeff;
   text-transform: uppercase;
   letter-spacing: 6px;
 }
@@ -81,13 +81,13 @@ textarea {
 
 .list-item {
   line-height: 4;
-  color: #000000;
+  color: #cff5ff;
 }
 
 .contact-text {
   font: 300 18px 'Lato', sans-serif;
   letter-spacing: 1.9px;
-  color: #000000;
+  color: #cff5ff;
 }
 
 .place {
@@ -103,13 +103,13 @@ textarea {
 }
 
 .contact-text a {
-  color: #000000;
+  color: #cff5ff;
   text-decoration: none;
   transition-duration: 0.2s;
 }
 
 .contact-text a:hover {
-  color: #000000;
+  color: #cff5ff;
   text-decoration: none;
 }
 
@@ -124,12 +124,12 @@ textarea {
 }
 
 .social-media-list li:hover a {
-  color: #000;
+  color: #ffffff;
 }
 
 .copyright {
   font: 200 14px 'Oswald', sans-serif;
-  color: #555;
+  color: #ffffff;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -208,7 +208,7 @@ hr {
 }
 
 body {
-  background-image: url('SNEAKER_GUIDE_OPENER.webp');
+  background-image: url('man-sitting-on-stairs-lifestyle-600nw-740474782.webp');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
