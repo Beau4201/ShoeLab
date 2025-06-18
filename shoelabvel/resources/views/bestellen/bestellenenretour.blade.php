@@ -8,16 +8,20 @@ body {
   font-family: Arial;
   font-size: 17px;
   padding: 8px;
-}
+      background-image: url(https://images.victorianplumbing.co.uk/products/bellus-blue-marble-effect-wall-and-floor-tiles-600-x-600mm/carouselimages/bls6x6blu_d5.jpg?origin=bls6x6blu_d5.jpg&w=675);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
 
 * {
   box-sizing: border-box;
 }
 
 .row {
-  display: -ms-flexbox; /* IE10 */
+  display: -ms-flexbox; 
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
+  -ms-flex-wrap: wrap; 
   flex-wrap: wrap;
   margin: 0 -16px;
 }
@@ -44,7 +48,7 @@ body {
 }
 
 .container {
-  background-color: #f2f2f2;
+  background-color:rgb(220, 240, 247);
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
@@ -70,7 +74,7 @@ label {
 }
 
 .btn {
-  background-color: #04AA6D;
+  background-color:rgb(0, 0, 0);
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -82,11 +86,11 @@ label {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color:rgb(194, 249, 255);
 }
 
 a {
-  color: #2196F3;
+  color:rgb(247, 251, 255);
 }
 
 hr {
@@ -111,8 +115,9 @@ span.price {
 </head>
 <body>
 
-<h2>Responsive Checkout Form</h2>
-<p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p>
+<h2>checkout</h2>
+  <a href="{{ url('index') }}">Soorten schoenen</a>
+  
 <div class="row">
   <div class="col-75">
     <div class="container">
@@ -180,14 +185,14 @@ span.price {
   <div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      
       <hr>
       <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
     </div>
   </div>
+  
+  
+
 </div>
 
 </body>

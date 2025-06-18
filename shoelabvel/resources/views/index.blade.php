@@ -275,10 +275,10 @@
         <form action="{{ route('search') }}" method="GET">
             <input type="text" name="q" id="searchInput" placeholder="Zoek een product" onkeyup="liveFilter()" autocomplete="off" />
         </form>
-        <a href="{{ url('contact') }}">Contact</a>
+        <a href="{{ url(path: 'contact') }}">Contact</a>
         <a href="{{ url('soortenschoenen') }}">Soorten schoenen</a>
         <a href="#over">Over ons</a>
-        <a href="#products">Producten</a>
+        <a href="{{ url('products') }}">Producten</a>
     </nav>
 
     <main class="main-content" role="main">

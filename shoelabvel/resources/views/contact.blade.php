@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+
+
+ @extends('layouts.app')
+
+@section("head")
     <link rel="stylesheet" href="../css/contact2.css">
-</head>
-<body>
-    
+@endsection
+
+
+ 
+@section("content")
 <section id="contact">
   
   <h1 class="section-header">Contact Us</h1>
   
   <div class="contact-wrapper">
   
-  <!-- Left contact page --> 
+  <!-- links contact page --> 
     
     <form id="contact-form" class="form-horizontal" role="form" action="#" method="post">
        
@@ -75,5 +76,5 @@ document.querySelector('#contact-form').addEventListener('submit', (e) => {
 
   
 </script>
-</body>
-</html>
+
+@endsection

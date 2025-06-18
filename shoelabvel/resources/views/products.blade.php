@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Alle Producten</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+@extends("layouts.app")
+
+@section("head")
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,10 +30,14 @@
             margin-top: 10px;
         }
     </style>
-</head>
-<body>
+    @endsection
+@section("content")
+    
+    <div class="container">
+        <h1>Alle Producten</h1>
+    </div>
 
-    <h1>Alle Producten</h1>
+<h1>Alle Producten</h1>
 
     @if(session('success'))
         <div style="color: green; margin-bottom: 20px;">{{ session('success') }}</div>
@@ -53,5 +55,5 @@
         @endforelse
     </div>
 
-</body>
-</html>
+
+@endsection
