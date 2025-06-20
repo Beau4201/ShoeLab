@@ -1,6 +1,6 @@
-@extends('layouts.app')`
+@extends('layouts.app')
 
-@section('applayout.css')
+@section('head') {{-- Deze moet overeenkomen met je layout --}}
     <link rel="stylesheet" href="{{ asset('css/applayout.css') }}">
 @endsection
 

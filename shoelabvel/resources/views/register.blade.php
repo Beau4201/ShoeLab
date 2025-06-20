@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Registreren')
-
+@section('head') {{-- Deze moet overeenkomen met je layout --}}
+    <link rel="stylesheet" href="{{ asset('css/applayout.css') }}">
+@endsection
 @section('content')
 <div style="max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     <h2 style="text-align: center; margin-bottom: 20px;">Registreren</h2>
