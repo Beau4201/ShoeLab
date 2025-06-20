@@ -7,151 +7,132 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F5F5F5;
-            color: #333;
-        }
+    .top-header {
+    position: fixed;      /* vastplakken aan top */
+    top: 0;
+    left: 0;
+    width: 100vw;         /* volledige schermbreedte */
+    height: 60px;         /* vaste hoogte, pas aan wat je wil */
+    background-color: #111827;
+    color: #F9FAFB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;      /* padding binnen de bar */
+    box-sizing: border-box; /* padding telt mee in breedte */
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin: 0;            /* geen margin */
+}
 
-        /* Header styles */
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000;
-            padding: 10px 20px;
-            color: white;
-        }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-        .logo-circle {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
+.promo-text {
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
 
-        .promo-text {
-            font-size: 1rem;
-        }
+.burger-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    user-select: none;
+    color: #F9FAFB;
+    padding: 8px;
+    transition: color 0.2s ease;
+}
 
-        .burger-icon {
-            font-size: 26px;
-            cursor: pointer;
-        }
+.burger-icon:hover {
+    color: #10B981; /* bright green on hover */
+}
 
-        /* Side navigation */
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 60px;
-        }
+/* Side Navigation */
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;      /* full viewport height */
+    width: 0;
+    background-color: #111827;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    padding-top: 60px;  /* space for close button */
+    box-shadow: none;
+    margin: 0;          /* remove any margin */
+    z-index: 1100;
+}
 
-        .sidenav a {
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #ddd;
-            display: block;
-            transition: 0.3s;
-        }
+/* When opened, set width to 100% */
+.sidenav.open {
+    width: 100%;
+}
 
-        .sidenav a:hover {
-            background-color: #333;
-        }
 
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 15px;
-            font-size: 30px;
-            margin-left: 50px;
-        }
+.sidenav a {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #F9FAFB;
+    display: block;
+    transition: background-color 0.2s;
+}
 
-        /* Container for page content */
-        .container {
-            max-width: 450px;
-            margin: 60px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
+.sidenav a:hover {
+    background-color: #0000; /* green highlight */
+    color: white;
+}
 
-        /* Form styles */
-        input.feedback-input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #F9FAFB;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
 
-        input[type="submit"] {
-            width: 100%;
-            background-color: #000;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.sidenav .closebtn:hover {
+    color: #10B981;
+}
 
-        input[type="submit"]:hover {
-            background-color: #333;
-        }
+/* Style for the search input inside sidenav */
+.sidenav form {
+    padding: 0 24px 15px;
+}
 
-        p.reg, p.home {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
+.sidenav input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
 
-        p.reg a, p.home a {
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-        }
+/* Optional: scrollbar styling */
+.sidenav::-webkit-scrollbar {
+    width: 6px;
+}
 
-        p.reg a:hover, p.home a:hover {
-            text-decoration: underline;
-        }
+.sidenav::-webkit-scrollbar-thumb {
+    background-color: #10B981;
+    border-radius: 3px;
+}
 
-        .message-box {
-            padding: 15px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .message-error {
-            background-color: #ffd6d6;
-            color: #900;
-            border: 1px solid #900;
-        }
-
-        .message-success {
-            background-color: #d6ffd8;
-            color: #090;
-            border: 1px solid #090;
-        }
     </style>
 
     @yield('head')
