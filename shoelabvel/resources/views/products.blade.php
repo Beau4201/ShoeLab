@@ -189,6 +189,24 @@
             <div class="product-price">€{{ number_format($product->price, 2, ',', '.') }}</div>
             <div class="release-date">Gereleased op: {{ $product->created_at->format('d-m-Y') }}</div>
         </div>
+         <button onclick="addItem()">Item Toevoegen</button>
+
+    <script>
+        async function fetchCart() {
+            location.reload();
+        }
+
+        async function addItem() {
+            const response = await fetch('{{ route('cart.add') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+                body: JSON.stringify({ name: 'Nieuw Item', quantity: 1 }),
+            });
+            fetchCart();
+        }
     @empty
         <p style="text-align:center; color:#aaa; font-style: italic;">Geen producten gevonden.</p>
     @endforelse
