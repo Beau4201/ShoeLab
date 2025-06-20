@@ -190,9 +190,9 @@ span.price {
       <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
     </div>
   </div>
-  
-  
+ <?php
 
+?>
 </div>
 
 </body>

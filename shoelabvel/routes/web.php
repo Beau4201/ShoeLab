@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
@@ -45,6 +46,7 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('prod
 Route::post('/products', [ProductController::class, 'store'])->name('products.store'); // Product opslaan
 Route::get('/orderpage', [OrderController::class, 'showForm'])->name('orderpage'); // Route voor bestelpagina
 
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 
 // Optioneel: zoekfunctie
 Route::get('/search', [ProductController::class, 'search'])->name('search');
