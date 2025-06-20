@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Alle Producten</title>
+    <title>Alle Producten - Shoelab</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         body {
@@ -94,7 +94,6 @@
     </style>
 </head>
 <body>
-
     <h1>Alle Producten</h1>
 
     @if(session('success'))
@@ -128,7 +127,6 @@
             <p>Geen producten gevonden.</p>
         @endforelse
     </div>
-
 </body>
 </html>
 
