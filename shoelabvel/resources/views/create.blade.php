@@ -1,65 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Product Aanmaken - ShoeLab</title>
-    <link rel="stylesheet" href="{{ asset('css/eigen-website.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            padding: 40px;
+            background-color: #121212;
+            padding: 40px 20px;
+            color: #E0E0E0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
         }
 
         .form-container {
+            background: #1E1E1E;
+            padding: 35px 40px;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
             max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #4ADE80;
+            text-align: center;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         label {
             display: block;
-            margin-top: 15px;
-            font-weight: bold;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #A0A0A0;
+            user-select: none;
         }
 
-        input, textarea {
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        input[type="file"] {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            margin-top: 8px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            border: 1.5px solid #333333;
+            background-color: #121212;
+            color: #E0E0E0;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        input[type="file"]:focus {
+            outline: none;
+            border-color: #4ADE80;
+            box-shadow: 0 0 10px #4ADE80cc;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
         }
 
         button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
+            margin-top: 30px;
+            width: 100%;
+            background-color: #4ADE80;
             border: none;
-            border-radius: 8px;
+            padding: 15px 0;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #121212;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+
+        button:hover {
+            background-color: #22c55e;
         }
 
         .success {
             text-align: center;
-            color: green;
-            margin-bottom: 20px;
+            color: #4ADE80;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
 
         .error {
-            color: red;
-            margin-top: 10px;
+            color: #f87171;
+            margin-top: 8px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-
     <div class="form-container">
         <h2>Nieuw Product Toevoegen</h2>
 
@@ -80,11 +129,10 @@
             <input type="number" id="price" name="price" step="0.01" required>
 
             <label for="image">Afbeelding</label>
-            <input type="file" id="image" name="image">
+            <input type="file" id="image" name="image" accept="image/*">
 
             <button type="submit">Product Opslaan</button>
         </form>
     </div>
-
 </body>
 </html>

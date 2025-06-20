@@ -4,107 +4,163 @@
 <style>
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: #F3F4F6;
+        background-color: #121212;
         margin: 0 auto;
         padding: 40px 60px;
-        color: #1F2937;
+        color: #E0E0E0;
         max-width: 1200px;
     }
 
     h1 {
         text-align: center;
-        margin-bottom: 40px;
-        font-size: 2.5rem;
+        margin-bottom: 50px;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #FFFFFF;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
     }
 
     .message {
         text-align: center;
-        color: green;
-        margin-bottom: 20px;
-        font-weight: bold;
+        color: #4ADE80;
+        margin-bottom: 25px;
+        font-weight: 600;
+        font-size: 1.1rem;
     }
 
     .filter-bar {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     .filter-bar select {
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #1E1E1E;
+        color: #E0E0E0;
+        border: 1.5px solid #333333;
+        padding: 12px 45px 12px 18px;
+        border-radius: 12px;
         font-size: 1rem;
+        font-weight: 600;
+        width: 220px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg fill='%23E0E0E0' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 12px 12px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .filter-bar select:hover,
+    .filter-bar select:focus {
+        border-color: #4ADE80;
+        outline: none;
+        box-shadow: 0 0 10px #4ADE80cc;
     }
 
     .product-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 35px;
         justify-content: center;
     }
 
     .product-card {
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 12px;
-        padding: 20px;
-        width: calc((100% / 3) - 20px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        background: #1E1E1E;
+        border: 1px solid #333333;
+        border-radius: 16px;
+        padding: 25px 20px 30px 20px;
+        width: calc((100% / 3) - 25px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
         text-align: center;
-        transition: transform 0.2s;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        color: #E0E0E0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .product-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px #4ADE80CC;
+        border-color: #4ADE80;
+        cursor: pointer;
     }
 
     .product-card img {
         max-width: 100%;
-        border-radius: 8px;
-        margin-bottom: 12px;
+        border-radius: 12px;
+        margin-bottom: 18px;
         object-fit: cover;
-        height: 200px;
+        height: 210px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
     }
 
     .product-card h3 {
         margin-top: 0;
-        font-size: 1.2rem;
-        color: #111827;
+        font-size: 1.4rem;
+        color: #FFFFFF;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: 0.03em;
     }
 
     .product-card p {
-        font-size: 0.95rem;
-        color: #6B7280;
+        font-size: 1rem;
+        color: #B0B0B0;
+        flex-grow: 1;
+        margin-bottom: 15px;
+        line-height: 1.5;
     }
 
     .product-price {
-        color: #10B981;
-        font-weight: bold;
-        margin-top: 10px;
-        font-size: 1.1rem;
+        color: #4ADE80;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        letter-spacing: 0.05em;
     }
 
     .release-date {
         font-size: 0.85rem;
-        color: #9CA3AF;
-        margin-top: 8px;
+        color: #888888;
+        font-style: italic;
+        margin-top: auto;
     }
 
     /* Responsive */
     @media (max-width: 900px) {
         .product-card {
-            width: calc((100% / 2) - 15px);
+            width: calc((100% / 2) - 20px);
         }
     }
 
     @media (max-width: 600px) {
+        body {
+            padding: 30px 20px;
+        }
         .product-card {
             width: 100%;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .filter-bar select {
+            width: 100%;
+            max-width: 300px;
         }
     }
 </style>
 
-<h1>Alle Producten</h1>
+<h1>ALLE PRODUCTEN</h1>
 
 @if(session('success'))
     <div class="message">{{ session('success') }}</div>
@@ -112,11 +168,11 @@
 
 <div class="filter-bar">
     <form method="GET" action="{{ url()->current() }}">
-        <label for="sort">Sorteer op: </label>
+        <label for="sort" class="sr-only">Sorteer op</label>
         <select name="sort" id="sort" onchange="this.form.submit()">
             <option value="">-- Selecteer --</option>
             <option value="name" {{ request('sort') == 'name' ? 'selected' : '' }}>Naam</option>
-            <option value="price" {{ request('sort') == 'price' ? 'selected' : '' }}>Prijs (Laag -> Hoog)</option>
+            <option value="price" {{ request('sort') == 'price' ? 'selected' : '' }}>Prijs (Laag → Hoog)</option>
             <option value="date" {{ request('sort') == 'date' ? 'selected' : '' }}>Release Datum</option>
         </select>
     </form>
@@ -124,7 +180,7 @@
 
 <div class="product-list">
     @forelse ($products as $product)
-        <div class="product-card">
+        <div class="product-card" tabindex="0" aria-label="Product {{ $product->name }}, prijs €{{ number_format($product->price, 2, ',', '.') }}">
             @if($product->image)
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             @endif
@@ -134,7 +190,7 @@
             <div class="release-date">Gereleased op: {{ $product->created_at->format('d-m-Y') }}</div>
         </div>
     @empty
-        <p>Geen producten gevonden.</p>
+        <p style="text-align:center; color:#aaa; font-style: italic;">Geen producten gevonden.</p>
     @endforelse
 </div>
 @endsection
