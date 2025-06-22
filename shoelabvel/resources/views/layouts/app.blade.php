@@ -141,7 +141,7 @@
 
     <header class="top-header">
         <div class="logo-container">
-            <img src="{{ asset('img/IMG-20250509-WA0000.jpg') }}" alt="ShoeLab logo" class="logo-circle">
+            <img src="{{ asset('img/logosb.png') }}" alt="ShoeLab logo" class="logo-circle">
             <span class="promo-text">Shop NU! 50% korting op je eerste paar schoenen!</span>
         </div>
         <span class="burger-icon" onclick="openNav()">&#9776;</span>
