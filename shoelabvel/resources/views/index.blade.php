@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    <div class="winkelmandje">
-  <img src="{{ asset('img/winkelmandje.png') }}" alt="Winkelmand" style="width: 50px; height: 50px; cursor: pointer;" />
-</div>
-
+    
     <header class="top-header" role="banner">
         <div class="logo-container">
             <img src="{{ asset('img/IMG-20250509-WA0000.jpg') }}" alt="ShoeLab logo" class="logo-circle" action="index.blade.php"/>
             <span class="promo-text" aria-live="polite">Shop NU! 50% korting op je eerste paar schoenen!</span>
+            <div id="winkelmandje" class="winkelmandje">
+        <img src="{{ asset('img/winkelmandje.png') }}" alt="Winkelmand" style="width: 50px; height: 50px; cursor: pointer;" />
+    </div>
         </div>
         <span class="burger-icon" role="button" aria-label="Open navigatie menu" tabindex="0" onclick="openNav()" onkeydown="if(event.key==='Enter'){openNav()}">&#9776;</span>
     </header>
