@@ -36,6 +36,7 @@
         <a href="{{ url('soortenschoenen') }}">Soorten schoenen</a>
         <a href="#over">Over ons</a>
         <a href="{{ url('products') }}">Producten</a>
+         <a href="{{ url('orderpage') }}">winkelmand</a>
     </nav>
 
     <main class="main-content" role="main">

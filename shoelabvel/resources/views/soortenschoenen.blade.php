@@ -1,95 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soorten wiet</title>
-    <link rel="stylesheet" href="css/soortenschoenen.css">
-</head>
+ @extends('layouts.app')
 
-<body>
-    <details>
-        <summary>Shiva</summary>
-        <div class="shiva">
-            <p>
-                Shiva-wiet is een ontspannende, indica-dominante soort met de volgende effecten:
-                <br>
-                <br>
-                1. Lichamelijke ontspanning: Het zorgt voor een diep, ontspannen gevoel in je lichaam en helpt tegen
-                pijn en stijfheid.
-                <br>
-                <br>
-                2. Rust in je hoofd: Het kalmeert je geest en vermindert stress en zorgen.
-                <br>
-                <br>
+@section("head")
+    <link rel="stylesheet" href="../css/contact2.css">
+@endsection
 
-                3. Gelukkig en euforisch: Het kan een zachte, euforische "high" geven, wat zorgt voor een gelukkig
-                gevoel.
-                <br>
-                <br>
-                4. Slaperigheid en zwaarte: Bij hogere doses kan het je slaperig maken en je lichaam zwaar aanvoelen,
-                perfect om te ontspannen voor het slapen.
-                <br>
-                <br>
-                5. Versterkte zintuigen: Geluiden, smaken en lichamelijke sensaties kunnen intenser aanvoelen.
 
-                Shiva-wiet is ideaal om te ontspannen, je gedachten te kalmeren en pijn te verlichten.
-
-                Prijs 10,54 per gram.
-            </p>
-
+ 
+@section("content")
+<section id="contact">
+  
+  <h1 class="section-header">Contact Us</h1>
+  
+  <div class="contact-wrapper">
+  
+  <!-- links contact page --> 
+    
+    <form id="contact-form" class="form-horizontal" role="form" action="#" method="post">
+       
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
         </div>
-    </details>
+      </div>
 
-    <details>
-        <summary>Super Silver Haze </summary>
-        <p>
-            Super Silver Haze is een hybride wietsoort die voornamelijk sativa-dominant is. Het heeft de volgende
-            effecten:
-            <br>
-            <br>
-            1. Energie en focus: Het kan je een energieke en opwekkende high geven, ideaal voor sociale activiteiten of
-            creatief werk.
-            <br>
-            <br>
-            2. Mentale helderheid: Gebruikers ervaren vaak een duidelijke en opgewekte geest, met verbeterde focus en
-            concentratie.
-            <br>
-            <br>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+        </div>
+      </div>
 
-            3. Euforie en geluk: Het heeft een sterke, euforische werking die vaak zorgt voor een gelukkige en positieve
-            stemming.
-            <br>
-            <br>
-            4. Lichamelijke ontspanning: Ondanks zijn sativa-dominantie zorgt het ook voor een
-            subtiele ontspanning van het lichaam, zonder zware slaperigheid.
-        </p>
-        <p>Prijs 11,43 per gram.</p>
-    </details>
-    <details>
-        <summary>Amnesia Haze</summary>
-        <p>Amnesia Haze is een sativa-dominante wietsoort die bekend staat om de volgende effecten:
-            <br>
-            <br>
-            Euforie en geluk: Het veroorzaakt vaak een sterke euforische en gelukkige high, die de stemming aanzienlijk
-            kan verbeteren.
-            <br>
-            <br>
-            Creativiteit en focus: Gebruikers ervaren vaak een verhoogd gevoel van creativiteit en mentale helderheid,
-            wat het ideaal maakt voor sociale interacties of artistieke bezigheden.
-            <br>
-            <br>
-            Energie en alertheid: Het kan je een energieke en opgewekte boost geven, waardoor je actiever en
-            productiever wordt.
-            <br>
-            <br>
-            Lichte lichamelijke ontspanning: Hoewel het voornamelijk mentaal is, zorgt het ook voor een milde fysieke
-            ontspanning zonder dat het je slaperig maakt.
-        </p>
-    </details>
+      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+      
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="alt-send-button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+        </div>
+      
+      </button>
+      
+    </form>
+    
+  <!-- Left contact page --> 
+    
+      <div class="direct-contact-container">
 
+        <ul class="contact-list">
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Netherlands</span></i></li>
+          
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">+31 6 09328754</a></span></i></li>
+          
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">Shoelab62@gmail.com</a></span></i></li>
+          
+        </ul>
 
-</body>
+        
 
-</html>
+        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+      </div>
+    
+  </div>
+  
+</section>  
+  
+
+<script>
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
+
+  
+</script>
+
+@endsection
