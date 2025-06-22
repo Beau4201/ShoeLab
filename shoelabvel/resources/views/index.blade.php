@@ -16,7 +16,7 @@
     
     <header class="top-header" role="banner">
         <div class="logo-container">
-            <img src="{{ asset('img/IMG-20250509-WA0000.jpg') }}" alt="ShoeLab logo" class="logo-circle" action="index.blade.php"/>
+            <img src="{{ asset('img/logosb.png') }}" alt="ShoeLab logo" class="logo-circle" action="index.blade.php"/>
             <span class="promo-text" aria-live="polite">Shop NU! 50% korting op je eerste paar schoenen!</span>
             <div id="winkelmandje" class="winkelmandje">
         <img src="{{ asset('img/winkelmandje (2).png') }}" alt="Winkelmand" style="width: 50px; height: 50px; cursor: pointer;" />
