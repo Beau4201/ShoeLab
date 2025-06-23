@@ -53,6 +53,9 @@ Route::get('/search', [ProductController::class, 'search'])->name('search');
 // Route::get('/products', [ProductController::class, 'index'])->name('products');
 // Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 
+Route::view('/privacy', 'privacy')->name('privacy');
+
+
 
 
 

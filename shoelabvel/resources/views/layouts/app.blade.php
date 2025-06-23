@@ -156,7 +156,9 @@
         <a href="{{ url('contact') }}">Contact</a>
         <a href="{{ url('soortenschoenen') }}">Soorten schoenen</a>
         <a href="#over">Over ons</a>
-        <a href="#products">Producten</a>
+        <a href="{{ url('products') }}">Producten</a>
+        <a href="{{ url('privacy') }}">Privacyverklaring</a>
+
     </div>
 
     <main class="container">
