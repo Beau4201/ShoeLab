@@ -23,22 +23,21 @@
         </form>
     </div>
 
-<div class="product-list">
-    @forelse ($products as $product)
-        <div class="product-card" tabindex="0" aria-label="Product {{ $product->name }}, prijs €{{ number_format($product->price, 2, ',', '.') }}">
-            @if($product->image)
-                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-            @endif
-            
-            <h3>{{ $product->name }}</h3>
-            <p>{{ $product->description }}</p>
-            <div class="product-price">€{{ number_format($product->price, 2, ',', '.') }}</div>
-            <div class="release-date">Gereleased op: {{ $product->created_at->format('d-m-Y') }}</div>
-             <button id="plusbutton" class="plusbutton" onclick="addItem('Item 1')">+</button>
+    <div class="product-list">
+        @forelse ($products as $product)
+            <div class="product-card" tabindex="0" aria-label="Product {{ $product->name }}, prijs €{{ number_format($product->price, 2, ',', '.') }}">
+                @if($product->image)
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                @endif
+
+                <h3>{{ $product->name }}</h3>
+                <p>{{ $product->description }}</p>
+                <div class="product-price">€{{ number_format($product->price, 2, ',', '.') }}</div>
+                <div class="release-date">Gereleased op: {{ $product->created_at->format('d-m-Y') }}</div>
+                <button class="plusbutton" onclick="addItem('{{ $product->name }}')">+</button>
             </div>
-            </div>
-    @empty
-        <p style="text-align:center; color:#aaa; font-style: italic;">Geen producten gevonden.</p>
-    @endforelse
-</div>
+        @empty
+            <p style="text-align:center; color:#aaa; font-style: italic;">Geen producten gevonden.</p>
+        @endforelse
+    </div>
 @endsection
