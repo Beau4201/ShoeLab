@@ -4,11 +4,9 @@ use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CartController;
-
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
@@ -33,31 +31,26 @@ Route::get('/privacy', function () { return view('privacy'); })->name('privacy')
 Route::get('/faq', function () { return view('faq'); })->name('faq');
 Route::get('/blog', function () { return view('blog'); })->name('blog');
 
+// Authentication routes using AuthController
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'showForm'])->name('register.form');
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 // Product routes
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create'); // Formulier aanmaken product
-Route::post('/products', [ProductController::class, 'store'])->name('products.store'); // Product opslaan
-Route::get('/orderpage', [OrderController::class, 'showForm'])->name('orderpage'); // Route voor bestelpagina
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
+// Order and cart routes
+Route::get('/orderpage', [OrderController::class, 'showForm'])->name('orderpage');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 
-// Optioneel: zoekfunctie
+// Search route
 Route::get('/search', [ProductController::class, 'search'])->name('search');
-// Route::get('/products', [ProductController::class, 'index'])->name('products');
-// Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 
+// Privacy route (also defined above, but no harm)
 Route::view('/privacy', 'privacy')->name('privacy');
-
-
-
-
-
-
-

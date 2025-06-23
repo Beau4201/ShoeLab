@@ -33,7 +33,7 @@
         <p>Je hebt het recht om je gegevens in te zien, te wijzigen of te verwijderen. Neem hiervoor contact met ons op.</p>
 
         <h2>Contact</h2>
-        <p>Heb je vragen over onze privacyverklaring? Mail ons via <a href="mailto:info@jouwsite.nl">info@jouwsite.nl</a>.</p>
+        <p>Heb je vragen over onze privacyverklaring? Bel ons via <a href="callto: +31628439193">+31628439193</a>.</p>
 
         <p style="margin-top: 40px; font-size: 0.9rem; color: #888;">Laatst bijgewerkt: {{ now()->format('d-m-Y') }}</p>
     </div>

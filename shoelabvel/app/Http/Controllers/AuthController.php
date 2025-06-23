@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    // Login pagina tonen
+    // Show the login form
     public function showLoginForm()
     {
-        return view('login');
+        return view('auth.login');  // <-- Make sure this matches your view location
     }
 
-    // Login actie afhandelen
+    // Handle login form submission
     public function login(Request $request)
     {
         $request->validate([
@@ -26,10 +26,10 @@ class AuthController extends Controller
         $user = DB::table('login')->where('email', $request->email)->first();
 
         if ($user) {
-            // ✅ Gebruik Hash::check om gehashte wachtwoorden te vergelijken
             if (Hash::check($request->password, $user->password)) {
                 Session::put('user_id', $user->id);
                 Session::put('user_email', $user->email);
+                Session::put('user_name', $user->username ?? $user->name ?? $user->email);
 
                 return redirect('/')->with('success', 'Welkom terug!');
             } else {
@@ -40,28 +40,10 @@ class AuthController extends Controller
         }
     }
 
-    // Register pagina tonen
-    public function showRegisterForm()
+    // Log out the user
+    public function logout()
     {
-        return view('register');
-    }
-
-    // Register actie afhandelen
-    public function register(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|unique:login,email',
-            'password' => 'required|min:6|confirmed',
-        ]);
-
-        // ✅ Sla wachtwoord veilig op met Hash::make
-        DB::table('login')->insert([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        return redirect('/login')->with('success', 'Account aangemaakt, log in!');
+        Session::flush();
+        return redirect('/login')->with('success', 'Je bent uitgelogd.');
     }
 }

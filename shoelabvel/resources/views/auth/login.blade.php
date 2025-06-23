@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('head') {{-- Deze moet overeenkomen met je layout --}}
+@section('head')
     <link rel="stylesheet" href="{{ asset('css/applayout.css') }}">
 @endsection
 
@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ url('/login') }}">
+    <form method="POST" action="{{ route('login.post') }}">
         @csrf
         <input name="email" type="text" class="feedback-input" placeholder="Email" required />
         <input name="password" type="password" class="feedback-input" placeholder="Wachtwoord" required />

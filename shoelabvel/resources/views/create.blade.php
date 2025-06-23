@@ -1,37 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Product Aanmaken - ShoeLab</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+@extends('layouts.app')
+
+@section('head')
     <link rel="stylesheet" href="{{ asset('css/create.css') }}">
-    
-</head>
-<body>
-    <div class="form-container">
-        <h2>Nieuw Product Toevoegen</h2>
+@endsection
 
-        @if (session('success'))
-            <div class="success">{{ session('success') }}</div>
-        @endif
+@section('content')
+<div class="form-container">
+    <h2>Nieuw Product Toevoegen</h2>
 
-        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+    @if(session('success'))
+        <div class="message success">{{ session('success') }}</div>
+    @endif
 
-            <label for="name">Productnaam</label>
-            <input type="text" id="name" name="name" required>
+    @if($errors->any())
+        <div class="message message-error" style="color: #f87171; margin-bottom: 20px;">
+            <ul style="list-style: none; padding-left: 0;">
+                @foreach ($errors->all() as $error)
+                    <li>• {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-            <label for="description">Beschrijving</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
+    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
 
-            <label for="price">Prijs (€)</label>
-            <input type="number" id="price" name="price" step="0.01" required>
+        <label for="name">Productnaam</label>
+        <input type="text" id="name" name="name" value="{{ old('name') }}" required>
 
-            <label for="image">Afbeelding</label>
-            <input type="file" id="image" name="image" accept="image/*">
+        <label for="description">Beschrijving</label>
+        <textarea id="description" name="description" rows="4" required>{{ old('description') }}</textarea>
 
-            <button type="submit">Product Opslaan</button>
-        </form>
-    </div>
-</body>
-</html>
+        <label for="price">Prijs (€)</label>
+        <input type="number" id="price" name="price" step="0.01" value="{{ old('price') }}" required>
+
+        <label for="image">Afbeelding</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <button type="submit">Product Opslaan</button>
+    </form>
+</div>
+@endsection

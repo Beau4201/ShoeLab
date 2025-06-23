@@ -1,101 +1,101 @@
 body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            padding: 40px 20px;
-            color: #E0E0E0;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000; /* zwart */
+    padding: 40px 20px;
+    color: #FFFFFF; /* wit */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
 
-        .form-container {
-            background: #1E1E1E;
-            padding: 35px 40px;
-            border-radius: 14px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-            max-width: 600px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+.form-container {
+    background: #121212; /* heel donkergrijs, bijna zwart */
+    padding: 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-        h2 {
-            margin-bottom: 30px;
-            font-weight: 700;
-            font-size: 2rem;
-            color: #4ADE80;
-            text-align: center;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
+h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #FFFFFF; /* wit */
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
 
-        label {
-            display: block;
-            margin-top: 20px;
-            font-weight: 600;
-            font-size: 1rem;
-            color: #A0A0A0;
-            user-select: none;
-        }
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #CCCCCC; /* lichtgrijs voor labels */
+    user-select: none;
+}
 
-        input[type="text"],
-        input[type="number"],
-        textarea,
-        input[type="file"] {
-            width: 100%;
-            margin-top: 8px;
-            padding: 12px 15px;
-            border-radius: 12px;
-            border: 1.5px solid #333333;
-            background-color: #121212;
-            color: #E0E0E0;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1.5px solid #444444; /* donkergrijze rand */
+    background-color: #000000; /* zwart */
+    color: #FFFFFF; /* wit */
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        textarea:focus,
-        input[type="file"]:focus {
-            outline: none;
-            border-color: #4ADE80;
-            box-shadow: 0 0 10px #4ADE80cc;
-        }
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #FFFFFF; /* wit als focus */
+    box-shadow: 0 0 10px #FFFFFFcc;
+}
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
 
-        button {
-            margin-top: 30px;
-            width: 100%;
-            background-color: #4ADE80;
-            border: none;
-            padding: 15px 0;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: #121212;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            user-select: none;
-        }
+button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #FFFFFF; /* witte knop */
+    border: none;
+    padding: 15px 0;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #000000; /* zwarte tekst op knop */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
 
-        button:hover {
-            background-color: #22c55e;
-        }
+button:hover {
+    background-color: #CCCCCC; /* lichtgrijze hover */
+}
 
-        .success {
-            text-align: center;
-            color: #4ADE80;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
+.success {
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
 
-        .error {
-            color: #f87171;
-            margin-top: 8px;
-            font-size: 0.9rem;
-        }
+.error {
+    color: #FF0000; /* fel rood voor errors */
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
