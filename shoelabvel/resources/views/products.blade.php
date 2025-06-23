@@ -29,11 +29,14 @@
             @if($product->image)
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             @endif
+            
             <h3>{{ $product->name }}</h3>
             <p>{{ $product->description }}</p>
             <div class="product-price">€{{ number_format($product->price, 2, ',', '.') }}</div>
             <div class="release-date">Gereleased op: {{ $product->created_at->format('d-m-Y') }}</div>
-        </div>
+             <button id="plusbutton" class="plusbutton" onclick="addItem('Item 1')">+</button>
+            </div>
+            </div>
     @empty
         <p style="text-align:center; color:#aaa; font-style: italic;">Geen producten gevonden.</p>
     @endforelse

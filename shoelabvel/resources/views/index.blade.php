@@ -33,7 +33,6 @@
             <input type="text" name="q" id="searchInput" placeholder="Zoek een product" onkeyup="liveFilter()" autocomplete="off" />
         </form>
         <a href="{{ url(path: 'contact') }}">Contact</a>
-        <a href="{{ url('soortenschoenen') }}">Soorten schoenen</a>
         <a href="#over">Over ons</a>
         <a href="{{ url('products') }}">Producten</a>
          <a href="{{ url('orderpage') }}">winkelmand</a>
