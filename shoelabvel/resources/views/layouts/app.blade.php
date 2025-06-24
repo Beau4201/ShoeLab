@@ -147,7 +147,7 @@
             </form>
         @else
             <a href="{{ route('login') }}">Inloggen</a>
-            <a href="{{ route('register.form') }}">Registreren</a>
+            <a href="{{ route('register') }}">Registreren</a>
         @endauth
 
         <form action="{{ route('search') ?? '#' }}" method="GET" style="padding: 10px;">

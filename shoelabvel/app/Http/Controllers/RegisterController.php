@@ -11,7 +11,7 @@ class RegisterController extends Controller
     // Toon registratieformulier
     public function showForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     // Verwerk registratie

@@ -54,3 +54,5 @@ Route::get('/search', [ProductController::class, 'search'])->name('search');
 
 // Privacy route (also defined above, but no harm)
 Route::view('/privacy', 'privacy')->name('privacy');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
+

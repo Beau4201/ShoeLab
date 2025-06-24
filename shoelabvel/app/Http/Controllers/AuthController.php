@@ -46,4 +46,10 @@ class AuthController extends Controller
         Session::flush();
         return redirect('/login')->with('success', 'Je bent uitgelogd.');
     }
+
+    public function showRegisterForm()
+{
+    return view('auth.register'); // Adjust if your register blade is somewhere else
+}
+
 }
